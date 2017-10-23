@@ -1,7 +1,5 @@
-FROM gcc:4.9
+OM resin/armv7hf-debian:jessie
 LABEL io.resin.device-type="beaglebone-green-wifi"
-COPY . /hello
-WORKDIR /hello
-RUN gcc -o hello hello.c
-CMD ["./hello"]
-
+COPY . /infiswift
+WORKDIR /infiswift
+CMD ["/infiswift/hello"]
