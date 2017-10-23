@@ -1,0 +1,7 @@
+FROM gcc:4.9
+LABEL io.resin.device-type="beaglebone-green-wifi"
+COPY . /hello
+WORKDIR /hello
+RUN gcc -o hello hello.c
+CMD ["./hello"]
+
