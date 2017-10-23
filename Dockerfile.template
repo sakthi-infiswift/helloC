@@ -1,5 +1,6 @@
-FROM resin/armv7hf-debian:jessie
+FROM gcc:4.9
 LABEL io.resin.device-type="beaglebone-green-wifi"
-COPY . /infiswift
-WORKDIR /infiswift
-CMD ["/infiswift/wrapper_script.sh"]
+COPY . /hello
+WORKDIR /hello
+RUN gcc -o hello hello.c
+CMD ["./hello"]
