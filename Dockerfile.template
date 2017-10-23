@@ -1,4 +1,4 @@
-OM resin/armv7hf-debian:jessie
+FROM resin/armv7hf-debian:jessie
 LABEL io.resin.device-type="beaglebone-green-wifi"
 COPY . /infiswift
 WORKDIR /infiswift
