@@ -2,4 +2,5 @@ FROM resin/armv7hf-debian:jessie
 LABEL io.resin.device-type="beaglebone-green-wifi"
 COPY . /infiswift
 WORKDIR /infiswift
-CMD ["/infiswift/hello"]
+CMD ["/infiswift/hello1"]
+CMD ["/infiswift/hello2"]
