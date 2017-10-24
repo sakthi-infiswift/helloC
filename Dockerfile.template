@@ -1,5 +1,9 @@
 FROM resin/armv7hf-debian:jessie
 LABEL io.resin.device-type="beaglebone-green-wifi"
+
+RUN apt-get update \
+	&& apt-get install -y arm-linux-gnueabihf-gcc
+
 COPY . /hello
 WORKDIR /hello
 RUN arm-linux-gnueabihf-gcc -o hello hello.c
