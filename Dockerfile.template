@@ -1,8 +1,8 @@
-FROM gcc:4.9
+FROM resin/%%RESIN_MACHINE_NAME%%-debian
 LABEL io.resin.device-type="beaglebone-green-wifi"
 COPY . /hello
 WORKDIR /hello
-RUN gcc -o hello hello.c
+RUN arm-linux-gnueabihf-gcc -o hello hello.c
 
 # Enable systemd init system in container
 ENV INITSYSTEM on
