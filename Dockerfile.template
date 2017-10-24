@@ -1,4 +1,4 @@
-FROM resin/armv7hf-debian:jessie
+FROM gcc:4.9
 LABEL io.resin.device-type="beaglebone-green-wifi"
 
 COPY . /hello
