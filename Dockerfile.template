@@ -3,19 +3,12 @@ LABEL io.resin.device-type="beaglebone-green-wifi"
 
 
 RUN apt-get update \
-	&& apt-get install -y build-essential wget 
+	&& apt-get install -y build-essential
 
-RUN mkdir -p /app && cd /app \
-	&& wget http://ftp.parallella.org/esdk/esdk.2014.11_linux_armv7l.tar.gz && tar -xf esdk.2014.11_linux_armv7l.tar.gz && rm esdk.2014.11_linux_armv7l.tar.gz
-
-ENV EPIPHANY_HOME /app/esdk.2014.11
-
-# Enable default setup from webterminal
-RUN echo "source /app/esdk.2014.11/setup.sh" >> ~/.bashrc
 
 COPY . /hello
 WORKDIR /hello
-RUN arm-linux-gnueabihf-gcc -o hello hello.c
+RUN gcc -o hello hello.c
 
 # Enable systemd init system in container
 ENV INITSYSTEM on
